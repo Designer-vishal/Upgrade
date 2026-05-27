@@ -1,9 +1,10 @@
 import React from 'react';
-import Demo from './Component/Demo';
+import PropS from './Component/Props';
+
 const App = ()=>{
   return (
     <>
-      <Demo />
+      <PropS />
     </>
   );
 }
