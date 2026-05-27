@@ -1,24 +1,27 @@
-import React , {useEffect} from 'react';
+import React , {useState} from 'react';
 import './demo.css';
 const Demo = () => {
-    useEffect(()=>{
-        const WelcomeTitle = document.getElementById('welcome-title');
-        console.log('WelcomeTitle', WelcomeTitle.innerHTML);
-    },[]);
-
-    const setSelectedColor = color =>{
-        const Title = document.getElementById('welcome-title');;
-        Title.style.color = color;
-    }
+    
+    const [SelectTitleColor, SetTitleColor] = useState('black');
+    const menuItems = ['Home', 'About', 'Services', 'Contact'];
+    
 
   return (
     <>
         <div className="container">
-            <h1 id="welcome-title">Welcome Designer</h1>
+            <h1 id="welcome-title" style={{color: SelectTitleColor}}>Welcome Designer</h1>
             <div className="color-container-btn">
-                <button className="color-btn" onClick={()=> setSelectedColor('red')}>Red</button>
-                <button className="color-btn" onClick={()=> setSelectedColor('blue')}>Blue</button>
+                <button className="color-btn" onClick={()=> SetTitleColor('red')}>Red</button>
+                <button className="color-btn" onClick={()=> SetTitleColor('blue')}>Blue</button>
             </div>
+            <hr/>
+            <ul className="menu">
+                {
+                    menuItems.map((item,index)=>{
+                        return <li key={index}>{item}</li>
+                    })
+                }
+            </ul>
         </div>
     </>
   )
