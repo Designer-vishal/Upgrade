@@ -1,19 +1,16 @@
 import React, {useState} from 'react';
 
 import Product from './storeProduct';
+import Form from './form'
 import './style.css';
 
 const PropS = ()=>{
-    const [welcomeName, setWelcomeName] = useState("");
     return(
         <>
             <div className="container">
-                <input type="text" placeholder="welcome Name" className="search-input" onChange={(e)=>{setWelcomeName(e.target.value)}}/> 
-                <h1>
-                {
-                    welcomeName ? `welcome ${welcomeName}` : "welcome Guest"
-                }
-                </h1>
+                <h2 className="text-2xl font-bold text-white">Product Form</h2>
+                <Form/>
+        
                 <hr /> 
                 <Product/>
                 <hr />
