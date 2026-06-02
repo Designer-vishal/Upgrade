@@ -1,15 +1,24 @@
+import React, {useState} from 'react';
+
 import Product from './storeProduct';
 import './style.css';
 
-const propS = ()=>{
+const PropS = ()=>{
+    const [welcomeName, setWelcomeName] = useState("");
     return(
         <>
             <div className="container">
-                <h1>Task 1 — Dynamic Product Store</h1>
+                <input type="text" placeholder="welcome Name" className="search-input" onChange={(e)=>{setWelcomeName(e.target.value)}}/> 
+                <h1>
+                {
+                    welcomeName ? `welcome ${welcomeName}` : "welcome Guest"
+                }
+                </h1>
+                <hr /> 
                 <Product/>
                 <hr />
             </div>
         </>
     )
 }
-export default propS;
+export default PropS;

@@ -3,7 +3,7 @@ import productsData from './productdata';
 import ProductsCard from './productscard';
 const Product = ()=>{
     return(
-        <>
+        <>            
             <div className="products-row">
             {
                 productsData.map((product,index)=>{
